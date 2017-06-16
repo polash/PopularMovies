@@ -49,12 +49,12 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.movie_list_view, container, false);
+        mRecyclerView = rootView.findViewById(R.id.recyclerview);
 
         mSharedPrefSettings = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mSharedPrefEditor = mSharedPrefSettings.edit();
         mSharedPrefEditor.apply();
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), GRID_ITEMS));
 
@@ -186,9 +186,7 @@ public class MainActivityFragment extends Fragment {
 
         if (cursor != null) {
             if (cursor.moveToFirst()) {
-
-                while (cursor.moveToNext()) ;
-                {
+                do {
                     String title = cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.TITLE));
                     String movie_id = cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.MOVIE_ID));
                     String poster = cursor.getString(cursor.getColumnIndex(MovieContract.MovieEntry.POSTER));
@@ -200,7 +198,7 @@ public class MainActivityFragment extends Fragment {
                     Movie movie = new Movie(title, release_date, poster,
                             vote_average, overview, backdrop, movie_id);
                     mMovieArrayList.add(movie);
-                }
+                } while (cursor.moveToNext());
             }
         }
 

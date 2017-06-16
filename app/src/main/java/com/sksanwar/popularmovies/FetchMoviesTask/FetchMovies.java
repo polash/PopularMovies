@@ -104,7 +104,7 @@ public class FetchMovies extends AsyncTask<String, Void, ArrayList<Movie>> {
         String movieJsonString = null;
 
         try {
-            final String BASE_URL = "http://api.themoviedb.org/3/movie";
+            final String BASE_URL = "http://api.themoviedb.org/3/movie/";
             final String PAGE = "page";
             final String API_KEY = "api_key";
 
