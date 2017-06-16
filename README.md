@@ -1,5 +1,5 @@
 # PopularMovies Stage 2
-This app will fetch the Movie data from themoviedb API with network request and shows it to the screen. And a detail view of the Movie onclick to the poster of the movie and saves favorite Movies into database for offline Popular Movie Stage One based on Network Request to the themoviebd API to show popular movies and highest rated movie on Android Screen also save favorite movies into SQLite db for offline access.
+This app will fetch the Movie data from themoviedb API with network request and shows it to the screen. And a detail view of the Movie onclick to the poster of the movie and saves favorite Movies into database for offline Popular Movie Stage Two based on Network Request to the themoviebd API to show popular movies and highest rated movie on Android Screen also save favorite movies into SQLite db for offline access.
 
 This app contains API key. Please get your API key to work properly from themoviedb.
 
