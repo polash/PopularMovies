@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+
+    <!--Dimension for detail Views-->
+    <dimen name="movie_info_layout">280dp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="paddingAndMargin_10dp">10dp</dimen>
+    <dimen name="movie_title_size">25sp</dimen>
+    <dimen name="label_text_size_20sp">20sp</dimen>
+    <dimen name="label_text_size_15sp">15sp</dimen>
+    <dimen name="cardview_height">175dp</dimen>
+    <dimen name="image_height_list">250dp</dimen>
+    <dimen name="trailer_height">130dp</dimen>
+    <dimen name="trailer_width">200dp</dimen>
+</resources>

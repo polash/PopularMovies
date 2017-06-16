@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Movies</string>
+
+    <!--Sort order menu items in MainActivity-->
+    <string name="sort_title">Sort</string>
+    <string name="pop_movies">Most Popular</string>
+    <string name="top_movies">Highest Rated</string>
+    <string name="fav_movies">Favorite Movies</string>
+
+    <string name="favorite_Button">Favorite</string>
+    <string name="unfavorite_Button">Un favorite</string>
+
+    <!--Movie Detail View Contents-->
+    <string name="title">Original Title</string>
+    <string name="release_date">Release Date</string>
+    <string name="movie_rating">Movie Rating</string>
+    <string name="movie_rating_content">/10</string>
+    <string name="overview">Movie Overview</string>
+    <string name="trailer">Trailer</string>
+
+</resources>
