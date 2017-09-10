@@ -15,6 +15,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Adapter for showing trailers in the detail Fragment
  */
@@ -64,11 +67,12 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerV
     }
 
     public static class TrailerViewHolder extends RecyclerView.ViewHolder {
-        public ImageView mImageView;
+        @BindView(R.id.trailer_imageview)
+        ImageView mImageView;
 
         public TrailerViewHolder(View view) {
             super(view);
-            mImageView = (ImageView) view.findViewById(R.id.trailer_imageview);
+            ButterKnife.bind(this, view);
         }
     }
 }

@@ -11,6 +11,9 @@ import com.sksanwar.popularmovies.R;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Adapter for showing reviews in the detail Fragment
  */
@@ -45,13 +48,14 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
     }
 
     public static class ReviewViewHolder extends RecyclerView.ViewHolder {
-        public TextView mAuthor;
-        public TextView mContent;
+        @BindView(R.id.content)
+        TextView mAuthor;
+        @BindView(R.id.author)
+        TextView mContent;
 
         public ReviewViewHolder(View view) {
             super(view);
-            mContent = (TextView) view.findViewById(R.id.content);
-            mAuthor = (TextView) view.findViewById(R.id.author);
+            ButterKnife.bind(this, view);
         }
     }
 }

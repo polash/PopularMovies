@@ -29,6 +29,9 @@ import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by sksho on 15-Jun-17.
  */
@@ -36,6 +39,25 @@ import java.util.concurrent.ExecutionException;
 public class DetailActivityFragment extends Fragment {
     static final String MOVIE_OBJECT = "movie_object";
     private static final String LOG_TAG = DetailActivityFragment.class.getSimpleName();
+    //Binding the views with butterknife
+    @BindView(R.id.details_title)
+    TextView detailTitle;
+    @BindView(R.id.details_release_year)
+    TextView detailReleaseYear;
+    @BindView(R.id.details_release_month)
+    TextView detailReleaseMonth;
+    @BindView(R.id.details_vote_average)
+    TextView detailVoteAverage;
+    @BindView(R.id.details_overview)
+    TextView detailOverview;
+    @BindView(R.id.details_backdrop)
+    ImageView detailBackdrops;
+    @BindView(R.id.details_thumbnail)
+    ImageView detailThumbnail;
+    @BindView(R.id.favorite_button)
+    Button favoriteButton;
+    @BindView(R.id.details_layout)
+    View view;
     private ContentResolver resolver;
     private ArrayList<Trailer> mTrailerArrayList;
 
@@ -53,8 +75,8 @@ public class DetailActivityFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.detail_activity_fragment, container, false);
+        ButterKnife.bind(this, rootView);
 
         Movie movie = null;
         Bundle bundle = getArguments();
@@ -78,17 +100,7 @@ public class DetailActivityFragment extends Fragment {
             final String vote_average = movie.getVoteAverage();
             final String release_date = movie.getReleaseDate();
 
-            final View view = rootView.findViewById(R.id.details_layout);
             view.setVisibility(View.VISIBLE);
-
-            TextView detailTitle = (TextView) rootView.findViewById(R.id.details_title);
-            TextView detailReleaseYear = (TextView) rootView.findViewById(R.id.details_release_year);
-            TextView detailReleaseMonth = (TextView) rootView.findViewById(R.id.details_release_month);
-            TextView detailVoteAverage = (TextView) rootView.findViewById(R.id.details_vote_average);
-            TextView detailOverview = (TextView) rootView.findViewById(R.id.details_overview);
-            ImageView detailBackdrops = (ImageView) rootView.findViewById(R.id.details_backdrop);
-            ImageView detailThumbnail = (ImageView) rootView.findViewById(R.id.details_thumbnail);
-            final Button favoriteButton = (Button) rootView.findViewById(R.id.favorite_button);
 
             detailTitle.setText(movie.getTitle());
             detailReleaseYear.setText(getYear((movie.getReleaseDate())));
