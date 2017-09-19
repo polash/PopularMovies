@@ -3,9 +3,9 @@ This app will fetch the Movie data from themoviedb API with network request and 
 
 This app contains API key. Please get your API key from https://www.themoviedb.org/documentation/api to work properly.
 
-To know how to hide the API key please follow the link https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/ or https://www.linkedin.com/pulse/how-hide-your-api-key-android-apps-allan-caine
+To know how to hide the API key please follow the link https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/ and https://www.linkedin.com/pulse/how-hide-your-api-key-android-apps-allan-caine
 
-Recycle View https://guides.codepath.com/android/using-the-recyclerview
+Recycle View https://guides.codepath.com/android/using-the-recyclerview 
 
 Http Methods http://www.restapitutorial.com/lessons/httpmethods.html
 
