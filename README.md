@@ -5,7 +5,7 @@ This app contains API key. Please get your API key from https://www.themoviedb.o
 
 To know how to hide the API key please follow the link https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/ and https://www.linkedin.com/pulse/how-hide-your-api-key-android-apps-allan-caine
 
-Recycle View https://guides.codepath.com/android/using-the-recyclerview and https://developer.android.com/guide/topics/ui/layout/recyclerview.html
+Recycle Views https://guides.codepath.com/android/using-the-recyclerview and https://developer.android.com/guide/topics/ui/layout/recyclerview.html
 
 Http Methods http://www.restapitutorial.com/lessons/httpmethods.html
 
