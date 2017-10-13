@@ -1,5 +1,6 @@
 package com.sksanwar.popularmovies;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,9 +43,14 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.movie_detail_container,
                             detailFragment).commit();
         } else {
+            Bundle bundle = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+            }
             Intent intent = new Intent(this, DetailActivity.class);
             intent.putExtra(DetailActivityFragment.MOVIE_OBJECT, movie);
-            startActivity(intent);
+//            startActivity(intent);
+            startActivity(intent, bundle);
         }
     }
 }

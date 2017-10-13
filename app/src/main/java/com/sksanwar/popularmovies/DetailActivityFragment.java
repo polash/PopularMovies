@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -90,6 +93,17 @@ public class DetailActivityFragment extends Fragment {
         resolver = getActivity().getContentResolver();
 
         if (movie != null) {
+
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                Slide slide = new Slide(Gravity.BOTTOM);
+                slide.addTarget(R.id.details_layout);
+                slide.setInterpolator(
+                        AnimationUtils.loadInterpolator(getContext(),
+                                android.R.interpolator.linear_out_slow_in));
+                long slideDuration = 300;
+                slide.setDuration(slideDuration);
+                getActivity().getWindow().setEnterTransition(slide);
+            }
 
             final String title = movie.getTitle();
             //getActivity().setTitle(title);

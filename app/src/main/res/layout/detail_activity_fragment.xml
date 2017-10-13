@@ -1,157 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:showIn="@layout/activity_details">
 
-    <LinearLayout
-        android:id="@+id/details_layout"
+    <ImageView
+        android:id="@+id/details_backdrop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="invisible">
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
-        <ImageView
-            android:id="@+id/details_backdrop"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/details_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/cardview_height"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/margin_4dp"
-            app:cardCornerRadius="@dimen/margin_4dp"
-            app:cardElevation="@dimen/margin_4dp">
-
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="@dimen/cardview_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_4dp"
+                app:cardCornerRadius="@dimen/margin_4dp"
+                app:cardElevation="@dimen/margin_4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/details_thumbnail"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/details_title"
+                                style="@style/CarviewLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:maxLines="2" />
+
+                            <TextView
+                                android:id="@+id/details_release_year"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/label_text_size_20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/details_release_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/label_text_size_15sp" />
+
+                            <TextView
+                                android:id="@+id/details_vote_average"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/label_text_size_15sp" />
+
+                            <Button
+                                android:id="@+id/favorite_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/favorite_Button" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_4dp"
+                app:cardCornerRadius="@dimen/margin_4dp"
+                app:cardElevation="@dimen/margin_4dp"
+                app:contentPadding="@dimen/padding_10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/overview_label"
+                        style="@style/CarviewLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/overview" />
+
+                    <TextView
+                        android:id="@+id/details_overview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4dp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_4dp"
+                app:cardCornerRadius="@dimen/margin_4dp"
+                app:cardElevation="@dimen/margin_4dp"
+                app:contentPadding="@dimen/padding_10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/details_thumbnail"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
+                    <TextView
+                        style="@style/CarviewLabel"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:text="@string/trailer" />
 
-
-                        <TextView
-                            android:id="@+id/details_title"
-                            style="@style/CarviewLabel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:maxLines="2" />
-
-                        <TextView
-                            android:id="@+id/details_release_year"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/label_text_size_20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/details_release_month"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/label_text_size_15sp" />
-
-                        <TextView
-                            android:id="@+id/details_vote_average"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/label_text_size_15sp" />
-
-                        <Button
-                            android:id="@+id/favorite_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/favorite_Button" />
-
-                    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/trailer_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_4dp"
+                        android:scrollbars="horizontal" />
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/margin_4dp"
-            app:cardCornerRadius="@dimen/margin_4dp"
-            app:cardElevation="@dimen/margin_4dp"
-            app:contentPadding="@dimen/padding_10dp">
-
-            <LinearLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/review_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/overview_label"
-                    style="@style/CarviewLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/overview" />
-
-                <TextView
-                    android:id="@+id/details_overview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/margin_4dp" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/margin_4dp"
-            app:cardCornerRadius="@dimen/margin_4dp"
-            app:cardElevation="@dimen/margin_4dp"
-            app:contentPadding="@dimen/padding_10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/CarviewLabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/trailer" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/trailer_recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/margin_4dp"
-                    android:scrollbars="horizontal" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/review_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-</ScrollView>
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
